@@ -1,14 +1,24 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import { useEffect } from "react";
 
-function Home() {
+function Home(props: any) {
 
     const navigate = useNavigate()
+    const location = useLocation() || null
+
+    let isImageValidated = false
+    let image: any
 
     function handleClick() {
-        console.log("ok")
         navigate("/camara")
     }
+
+    useEffect(() => {
+        if (location.state.image) {
+            console.log(location.state.image)
+        }
+    })
 
     return (
         <div>
@@ -23,7 +33,13 @@ function Home() {
                     <button type="button" className="bg-indigo-800 text-white font-bold py-2 px-4 rounded-full" onClick={() => handleClick()}>TAKE PICTURE</button>
 
                 </div>
-            </div>            
+            </div>
+
+            <div className="flex justify-center">
+                
+            </div>
+
+
         </div>
 
     )

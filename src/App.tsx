@@ -10,7 +10,7 @@ function App() {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/:image?" element={<Home />} />
           <Route path="/camara" element={<PictureFeed />} />
         </Routes>
       </BrowserRouter>
