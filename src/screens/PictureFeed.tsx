@@ -28,7 +28,7 @@ function PictureFeed() {
     }
 
     function getOutcome(data: any) {
-        console.log(2, "Data outcome: ", data.summary.outcome)
+        console.log(1, "Data outcome: ", data.summary.outcome)
         if (data.summary.outcome === "Approved") {
             
             navigate("/", {state: {image: image}})
@@ -53,8 +53,8 @@ function PictureFeed() {
 
     useEffect(() => {
 
-        // takePicture()
-        navigate("/", {state: {image: "this is the image"}})
+        takePicture()
+        
 
     }, [])
 

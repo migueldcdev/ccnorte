@@ -2,20 +2,19 @@ import { useNavigate, useLocation } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { useEffect } from "react";
 
-function Home(props: any) {
+function Home() {
 
     const navigate = useNavigate()
-    const location = useLocation() || null
+    const location = useLocation() || false
 
-    let isImageValidated = false
-    let image: any
+
 
     function handleClick() {
         navigate("/camara")
     }
 
     useEffect(() => {
-        if (location.state.image) {
+        if (location.state != null) {
             console.log(location.state.image)
         }
     })
@@ -36,7 +35,13 @@ function Home(props: any) {
             </div>
 
             <div className="flex justify-center">
-                
+                {location.state != null &&
+                    <div className="mt-20 flex flex-col justify-center text-center mb-20">
+                        <img src={location.state.image} alt="Uploaded image" width={250}/>
+                        <p className="text-lime-600 text-2xl font-bold">Success!</p>
+                    </div>
+                }
+
             </div>
 
 
