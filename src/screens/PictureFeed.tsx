@@ -52,7 +52,7 @@ function PictureFeed() {
             <div className="flex flex-col justify-center text-white">
                 <div className="w-2/3 md:w-1/2 mx-auto text-center mt-20">
                     <p className="text-2xl font-bold">Take picture</p>
-                    <p className="mt-10">Fit your ID card inside the frame. The picture will be taken automatically.</p>
+                    <p className="mt-10">Fit your ID card inside the frame and click on the camera button.</p>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@ function PictureFeed() {
             </div>
 
             <div className="flex justify-center">
-                <button type="button" className="text-white font-bold px-5 py-3 rounded-full absolute my-5" onClick={() => capture()}><i className="fa fa-camera"></i></button>
+                <button type="button" className="border border-white border-2 text-white font-bold px-5 py-3 rounded-full absolute my-5" onClick={() => capture()}><i className="fa fa-camera"></i></button>
             </div>
 
             <div className="flex justify-center">
