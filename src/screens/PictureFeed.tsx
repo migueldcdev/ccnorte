@@ -1,22 +1,26 @@
-
+import React from "react";
 import Webcam from "react-webcam";
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 function PictureFeed() {
-    let photo: any
+
+    const navigate = useNavigate()
 
     const videoConstraints = {
         facingMode: { exact: "environment" }
-      };
+    };
 
-    const camera = useRef(photo);
+    const webcamRef: any = React.useRef(null);
 
-    let image: any;
-    const navigate = useNavigate()
+    function capture() {
+        
+        sendImage(webcamRef.current.getScreenshot())
+    }
 
-    async function sendImage() {
+
+    async function sendImage(image:any) {
 
         const response = await fetch('https://ccnorte.es/frontend-test-api/', {
             method: 'POST',
@@ -35,31 +39,22 @@ function PictureFeed() {
         console.log(1, "Data outcome: ", data.summary.outcome)
         if (data.summary.outcome === "Approved") {
 
-            navigate("/", { state: { image: image } })
+            navigate("/", { state: { image: capture, validated: true } })
 
         } else {
-            takePicture()
+            navigate("/", {state:{image: capture, validated: false}})
         }
 
     }
-
-    async function takePicture() {
-        try {
-            const photo = camera.current.takePhoto()
-            image = photo
-            await sendImage()
-
-        } catch (error) {
-
-            setTimeout(takePicture, 1000)
-        }
-    }
+    
 
     useEffect(() => {
 
-        takePicture()
-
-
+        navigator.mediaDevices.getUserMedia({ video: true }).then(() => {
+            capture()
+        }).catch((err) => {
+            alert(err)
+        })
     }, [])
 
 
@@ -77,11 +72,11 @@ function PictureFeed() {
                 <Webcam
                     audio={false}
                     className="w-80 h-54 object-cover"
-                    screenshotFormat="image/jpeg" 
-                    videoConstraints={videoConstraints}                                       
+                    screenshotFormat="image/jpeg"
+                    videoConstraints={videoConstraints}
                 />
-                   
-                
+
+
             </div>
 
             <div className="flex justify-center">
