@@ -33,17 +33,17 @@ function PictureFeed() {
 
         const data = await response.json()
 
-        getOutcome(data)
+        getOutcome(data, image)
     }
 
-    function getOutcome(data: any) {
+    function getOutcome(data: any, image: any) {
         console.log(1, "Data outcome: ", data.summary.outcome)
         if (data.summary.outcome === "Approved") {
 
-            navigate("/", { state: { image: capture, validated: true } })
+            navigate("/", { state: { image: image, validated: true } })
 
         } else {
-            navigate("/", { state: { image: capture, validated: false } })
+            navigate("/", { state: { image: image, validated: false } })
         }
 
     }
