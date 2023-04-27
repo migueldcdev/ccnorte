@@ -22,12 +22,13 @@ function Home() {
                 </div>
                 {location.state === null &&
 
-                    <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded relative">
-                        <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => handleClick()}>TAKE PICTURE</button>
+                    <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded relative bg-id">
+                        
+                        <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20 shadow" onClick={() => handleClick()}>TAKE PICTURE</button>
                     </div>
                 }
             </div>
-            
+
             <div className="flex justify-center">
 
                 {location.state !== null && location.state.validated === false &&
