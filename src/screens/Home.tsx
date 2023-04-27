@@ -38,13 +38,13 @@ function Home() {
             </div>
             <div className="flex justify-center">
                 {location.state != null && location.state.validated == false &&
-                    <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded relative border border-1 border-rose-500 overflow-y-hidden">
-                        <img src={location.state.image} alt="Uploaded image" width={250} />
+                    <div className="w-80 h-52  mx-auto mt-20 shadow rounded border border-1 border-rose-500 overflow-y-hidden">
+                        <img src={location.state.image} alt="Uploaded image" className="w-full h-full"/>
                     </div>
                 }
                 {location.state != null && location.state.validated == true &&
-                    <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded relative border border-1 border-lime-500 overflow-y-hidden">
-                        <img src={location.state.image} alt="Uploaded image" width={250} />
+                    <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-1 border-lime-500 overflow-y-hidden">
+                        <img src={location.state.image} alt="Uploaded image" className="w-full h-full"/>
                     </div>
                 }
 
