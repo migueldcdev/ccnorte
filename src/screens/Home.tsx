@@ -33,7 +33,6 @@ function Home() {
                     <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded relative">
                         <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => handleClick()}>TAKE PICTURE</button>
                     </div>
-
                 }
             </div>
             <div className="flex justify-center">
@@ -42,7 +41,7 @@ function Home() {
                     <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded border border-2 border-red-600 overflow-y-hidden relative">
                         <img src={location.state.image} alt="Uploaded image" className="w-full absolute" />
                         <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => handleClick()}>RETAKE PICTURE</button>
-                        <button className="text-white text-sm bg-red-600 px-1 py-1 top-96 mt-5 right-10 rounded absolute">X REJECTED</button>
+                        <button className="text-white text-sm bg-red-600 px-1 py-1 top-0 mt-5 right-10 rounded absolute"><i className="fa fa-car"></i> REJECTED</button>
                     </div>
 
 
@@ -50,6 +49,7 @@ function Home() {
                 {location.state != null && location.state.validated == true &&
                     <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-2 border-lime-500 overflow-y-hidden relative">
                         <img src={location.state.image} alt="Uploaded image" className="w-full " />
+                        <button className="text-white text-sm bg-lime-600 px-1 py-1 top-0 mt-5 right-10 rounded absolute"><i className="fa fa-car"></i> ACEPTED</button>
                     </div>
                 }
 
