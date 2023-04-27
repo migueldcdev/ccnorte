@@ -6,11 +6,9 @@ function Home() {
     const navigate = useNavigate()
     const location = useLocation() || false
 
-
     function handleClick() {
         navigate("/camara")
     }
-    
 
     return (
         <div>
@@ -41,7 +39,7 @@ function Home() {
                 {location.state !== null && location.state.validated === true &&
                     <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-2 border-lime-500 overflow-y-hidden relative">
                         <img src={location.state.image} alt="Uploaded" className="w-full " />
-                        <button className="text-white text-sm bg-lime-600 px-1 py-1 top-0 mt-5 right-10 rounded absolute">&#10003; ACEPTED</button>
+                        <button className="text-white text-sm bg-lime-600 px-1 py-1 top-0 mt-5 right-10 rounded absolute">&#x2713; ACEPTED</button>
                     </div>
                 }
 
