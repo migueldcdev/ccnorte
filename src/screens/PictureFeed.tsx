@@ -16,7 +16,7 @@ function PictureFeed() {
 
     function capture() {
         
-        sendImage(webcamRef.current.getScreenshot())
+        console.log(webcamRef.current.getScreenshot())
     }
 
 
@@ -48,10 +48,7 @@ function PictureFeed() {
     }
     
 
-    useEffect(() => {
-        capture()
-    }, [])
-
+    
 
 
     return (
@@ -72,6 +69,10 @@ function PictureFeed() {
                 />
 
 
+            </div>
+
+            <div className="flex justify-center">
+                <button type="button" className="text-white font-bold px-5 py-3 rounded-full absolute my-5" onClick={() => capture() }>Capture</button>
             </div>
 
             <div className="flex justify-center">
