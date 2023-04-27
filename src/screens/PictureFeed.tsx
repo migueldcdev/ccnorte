@@ -49,12 +49,7 @@ function PictureFeed() {
     
 
     useEffect(() => {
-
-        navigator.mediaDevices.getUserMedia({ video: true }).then(() => {
-            capture()
-        }).catch((err) => {
-            alert(err)
-        })
+        capture()
     }, [])
 
 
