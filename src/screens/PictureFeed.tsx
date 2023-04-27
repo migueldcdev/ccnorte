@@ -43,7 +43,7 @@ function PictureFeed() {
         try {
             const photo = camera.current.takePhoto()
             image = photo
-            const data = await sendImage()
+            await sendImage()
 
         } catch (error) {
 
@@ -72,7 +72,8 @@ function PictureFeed() {
             <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-1 border-white">
                 <Webcam
                     audio={false}
-                    
+                    height={208}
+                    width={320}
                     screenshotFormat="image/jpeg"
                                         
                 />
