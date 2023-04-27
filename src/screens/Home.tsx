@@ -1,6 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import { useEffect } from "react";
 
 function Home() {
 
@@ -8,16 +7,10 @@ function Home() {
     const location = useLocation() || false
 
 
-
     function handleClick() {
         navigate("/camara")
     }
-
-    useEffect(() => {
-        if (location.state != null) {
-            console.log(location.state.image)
-        }
-    })
+    
 
     return (
         <div>
@@ -28,7 +21,7 @@ function Home() {
                     <p className="text-2xl font-bold">Scan your ID</p>
                     <p className="mt-10">Take a picture. It may take time to validate your personal information.</p>
                 </div>
-                {location.state == null &&
+                {location.state === null &&
 
                     <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded relative">
                         <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => handleClick()}>TAKE PICTURE</button>
@@ -36,19 +29,19 @@ function Home() {
                 }
             </div>
             <div className="flex justify-center">
-                {location.state != null && location.state.validated == false &&
+                {location.state !== null && location.state.validated === false &&
                     <div className="relative">
                         <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded border border-2 border-red-600 overflow-y-hidden relative">
-                            <img src={location.state.image} alt="Uploaded image" className="w-full absolute" />
+                            <img src={location.state.image} alt="Uploaded" className="w-full absolute" />
                             <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => handleClick()}>RETAKE PICTURE</button>                            
                         </div>
                         <button className="text-white text-sm bg-red-600 px-2 py-2 top-64 mt-5 right-10 rounded absolute index-100"><i className="fa fa-xmark"></i> REJECTED</button>
                     </div>
                 }
-                {location.state != null && location.state.validated == true &&
+                {location.state !== null && location.state.validated === true &&
                     <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-2 border-lime-500 overflow-y-hidden relative">
-                        <img src={location.state.image} alt="Uploaded image" className="w-full " />
-                        <button className="text-white text-sm bg-lime-600 px-1 py-1 top-0 mt-5 right-10 rounded absolute"><i className="fa fa-car"></i> ACEPTED</button>
+                        <img src={location.state.image} alt="Uploaded" className="w-full " />
+                        <button className="text-white text-sm bg-lime-600 px-1 py-1 top-0 mt-5 right-10 rounded absolute">&#10003; ACEPTED</button>
                     </div>
                 }
 
