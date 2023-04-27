@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 bg-id {
-    background: url(public/id.jpg);
+    background: url('../public/id.jpg');
 }
