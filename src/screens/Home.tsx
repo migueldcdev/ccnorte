@@ -44,7 +44,7 @@ function Home() {
                             <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => handleClick()}>RETAKE PICTURE</button>
                         </div>
                         <div>
-                            <button className="text-white text-sm bg-red-600 px-1 py-1 top-0 right-0 rounded index-10 absolute">X REJECTED</button>
+                            <button className="text-white text-sm bg-red-600 px-1 py-1 top-0 right-0 rounded inset-0 absolute">&check; REJECTED</button>
                         </div>
                     </div>
                 }
