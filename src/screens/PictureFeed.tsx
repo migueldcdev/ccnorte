@@ -8,9 +8,7 @@ function PictureFeed() {
     let photo: any
 
     const videoConstraints = {
-        width: 320,
-        height: 208,
-        facingMode: "user"
+        facingMode: { exact: "environment" }
       };
 
     const camera = useRef(photo);
