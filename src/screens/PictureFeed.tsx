@@ -70,12 +70,7 @@ function PictureFeed() {
             </div>
 
             <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-1 border-white">
-                <Camera ref={camera} facingMode='environment' errorMessages={{
-                    noCameraAccessible: undefined,
-                    permissionDenied: undefined,
-                    switchCamera: undefined,
-                    canvas: undefined
-                }} /> 
+            <iframe src="https://example.com/camera-pro-iframe" allow="camera;"/>
             </div>    
 
             <div className="flex justify-center">
