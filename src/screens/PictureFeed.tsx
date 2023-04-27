@@ -1,6 +1,5 @@
 import React from "react";
 import Webcam from "react-webcam";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -13,9 +12,10 @@ function PictureFeed() {
     };
 
     const webcamRef = React.useRef(null as any);
+    
     const capture = React.useCallback(
         () => {
-            console.log(webcamRef.current.getScreenshot());
+           sendImage(webcamRef.current.getScreenshot());
         },
         [webcamRef]
     );
@@ -47,10 +47,6 @@ function PictureFeed() {
         }
 
     }
-
-
-
-
 
     return (
         <div className="bg-black h-screen w-screen">
