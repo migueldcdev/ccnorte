@@ -49,8 +49,7 @@ function Home() {
                     </div>
                 }
 
-            </div>
-            <i className="fa text-slate-200 text-xxl fa-id-card "></i> 
+            </div>            
         </div>
 
     )
