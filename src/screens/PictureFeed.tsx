@@ -72,9 +72,8 @@ function PictureFeed() {
             <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-1 border-white">
                 <Webcam
                     audio={false}
-                    className="w-full h-full"
-                    screenshotFormat="image/jpeg"
-                                        
+                    className="aspect-video"
+                    screenshotFormat="image/jpeg"                                        
                 />
                    
                 
