@@ -75,7 +75,7 @@ function PictureFeed() {
                 </div>
             </div>
 
-            <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-1 border-white">
+            <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-1 border-white overflow-y-hidden">
                 <Webcam
                     audio={false}
                     className="w-80 h-54 object-cover"
