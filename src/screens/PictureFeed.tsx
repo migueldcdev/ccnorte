@@ -9,7 +9,7 @@ function PictureFeed() {
     const navigate = useNavigate()
 
     const videoConstraints = {
-        facingMode: { exact: "environment" }
+        facingMode:  "environment" 
     };
 
     const webcamRef: any = React.useRef(null);
