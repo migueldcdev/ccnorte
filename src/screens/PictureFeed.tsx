@@ -37,7 +37,7 @@ function PictureFeed() {
     }
 
     function getOutcome(data: any, image: any) {
-        console.log(1, "Data outcome: ", data.summary.outcome)
+        
         if (data.summary.outcome === "Approved") {
 
             navigate("/", { state: { image: image, validated: true } })
@@ -45,7 +45,6 @@ function PictureFeed() {
         } else {
             navigate("/", { state: { image: image, validated: false } })
         }
-
     }
 
     return (
@@ -65,8 +64,6 @@ function PictureFeed() {
                     screenshotFormat="image/jpeg"
                     videoConstraints={videoConstraints}
                 />
-
-
             </div>
 
             <div className="flex justify-center">
