@@ -14,6 +14,7 @@ function Home() {
         <div>
 
             <NavBar />
+
             <div className="flex flex-col justify-center mt-10">
                 <div className="w-2/3 md:w-1/2 mx-auto text-center ">
                     <p className="text-2xl font-bold">Scan your ID</p>
@@ -26,7 +27,9 @@ function Home() {
                     </div>
                 }
             </div>
+            
             <div className="flex justify-center">
+
                 {location.state !== null && location.state.validated === false &&
                     <div className="relative">
                         <div className="w-80 h-52 flex justify-center mx-auto mt-20 shadow rounded border border-2 border-red-600 overflow-y-hidden relative">
@@ -36,6 +39,7 @@ function Home() {
                         <button className="text-white text-sm bg-red-600 px-2 py-2 top-64 mt-5 right-10 rounded absolute index-100">&#x2715;&nbsp; REJECTED</button>
                     </div>
                 }
+
                 {location.state !== null && location.state.validated === true &&
                     <div className="relative">
                         <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-2 border-lime-500 overflow-y-hidden relative">
@@ -46,7 +50,6 @@ function Home() {
                 }
 
             </div>
-
 
         </div>
 

@@ -48,7 +48,9 @@ function PictureFeed() {
     }
 
     return (
+
         <div className="bg-black h-screen w-screen">
+
             <div className="flex flex-col justify-center text-white">
                 <div className="w-2/3 md:w-1/2 mx-auto text-center mt-20">
                     <p className="text-2xl font-bold">Take picture</p>
@@ -67,12 +69,13 @@ function PictureFeed() {
             </div>
 
             <div className="flex justify-center">
-                <button type="button" className="border border-white border-2 text-white font-bold px-5 py-3 rounded-full absolute my-5" onClick={() => capture()}><i className="fa fa-camera"></i></button>
+                <button type="button" className="border border-white border-2 text-white font-bold px-5 py-3 rounded-full absolute my-10" onClick={() => capture()}><i className="fa fa-camera"></i></button>
             </div>
 
             <div className="flex justify-center">
                 <button type="button" className="text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => navigate('/')}>CANCEL</button>
             </div>
+            
         </div>
     )
 
