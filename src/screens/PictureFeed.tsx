@@ -7,6 +7,12 @@ import { useNavigate } from "react-router-dom";
 function PictureFeed() {
     let photo: any
 
+    const videoConstraints = {
+        width: 320,
+        height: 208,
+        facingMode: "user"
+      };
+
     const camera = useRef(photo);
 
     let image: any;
@@ -73,7 +79,8 @@ function PictureFeed() {
                 <Webcam
                     audio={false}
                     className="aspect-video"
-                    screenshotFormat="image/jpeg"                                        
+                    screenshotFormat="image/jpeg" 
+                    videoConstraints={videoConstraints}                                       
                 />
                    
                 
