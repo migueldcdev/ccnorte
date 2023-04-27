@@ -72,7 +72,7 @@ function PictureFeed() {
                 <button type="button" className="border border-white border-2 text-white font-bold px-5 py-3 rounded-full absolute my-10" onClick={() => capture()}><i className="fa fa-camera"></i></button>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-10">
                 <button type="button" className="text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => navigate('/')}>CANCEL</button>
             </div>
             

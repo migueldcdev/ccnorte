@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-bg-id {
+.bg-id {
     background: url('../public/id.jpg');
+    background-size: cover;
 }
