@@ -39,7 +39,7 @@ function Home() {
             <div className="flex justify-center">
                 {location.state != null && location.state.validated == false &&
                     <div className="w-80 h-52  mx-auto mt-20 shadow rounded border border-2 border-rose-500 overflow-y-hidden relative">
-                        <img src={location.state.image} alt="Uploaded image" className="w-full "/>
+                        <img src={location.state.image} alt="Uploaded image" className="w-full absolute"/>
                         <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => handleClick()}>RETAKE PICTURE</button>
                     </div>
                 }
