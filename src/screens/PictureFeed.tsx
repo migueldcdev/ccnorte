@@ -9,18 +9,19 @@ function PictureFeed() {
     const navigate = useNavigate()
 
     const videoConstraints = {
-        facingMode: "environment" 
+        facingMode: "environment"
     };
 
-    const webcamRef: any = React.useRef(null as any);
+    const webcamRef = React.useRef(null as any);
+    const capture = React.useCallback(
+        () => {
+            console.log(webcamRef.current.getScreenshot());
+        },
+        [webcamRef]
+    );
 
-    function capture() {
-        
-        console.log(webcamRef.current.getScreenshot())
-    }
 
-
-    async function sendImage(image:any) {
+    async function sendImage(image: any) {
 
         const response = await fetch('https://ccnorte.es/frontend-test-api/', {
             method: 'POST',
@@ -42,13 +43,13 @@ function PictureFeed() {
             navigate("/", { state: { image: capture, validated: true } })
 
         } else {
-            navigate("/", {state:{image: capture, validated: false}})
+            navigate("/", { state: { image: capture, validated: false } })
         }
 
     }
-    
 
-    
+
+
 
 
     return (
@@ -72,7 +73,7 @@ function PictureFeed() {
             </div>
 
             <div className="flex justify-center">
-                <button type="button" className="text-white font-bold px-5 py-3 rounded-full absolute my-5" onClick={() => capture() }>Capture</button>
+                <button type="button" className="text-white font-bold px-5 py-3 rounded-full absolute my-5" onClick={() => capture()}>Capture</button>
             </div>
 
             <div className="flex justify-center">
