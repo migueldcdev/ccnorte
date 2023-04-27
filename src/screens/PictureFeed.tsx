@@ -63,6 +63,7 @@ function PictureFeed() {
 
             <div className="w-80 h-52 mx-auto mt-20 shadow rounded border border-1 border-white overflow-y-hidden">
                 <Webcam
+                    ref={webcamRef}
                     audio={false}
                     className="w-80 h-54 object-cover"
                     screenshotFormat="image/jpeg"
