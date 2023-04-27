@@ -42,7 +42,7 @@ function Home() {
                             <img src={location.state.image} alt="Uploaded image" className="w-full absolute" />
                             <button type="button" className="bg-indigo-900 text-white font-bold px-5 py-3 rounded-full absolute my-20" onClick={() => handleClick()}>RETAKE PICTURE</button>                            
                         </div>
-                        <button className="text-white text-sm bg-red-600 px-1 py-1 top-64 mt-5 right-10 rounded absolute index-100"><i className="fa fa-car"></i> REJECTED</button>
+                        <button className="text-white text-sm bg-red-600 px-2 py-2 top-64 mt-5 right-10 rounded absolute index-100"><i className="fa fa-xmark"></i> REJECTED</button>
                     </div>
                 }
                 {location.state != null && location.state.validated == true &&
